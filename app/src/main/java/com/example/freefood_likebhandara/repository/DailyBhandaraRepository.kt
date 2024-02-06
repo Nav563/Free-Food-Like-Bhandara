@@ -10,11 +10,6 @@ import java.util.Date
 class DailyBhandaraRepository {
 
     suspend fun getBhandaraData(startDate: Date, endDate: Date): List<BhandaraModel> {
-        // Firestore query
-//        return Firebase.firestore.collection("Bhandara")
-//            .get()
-//            .await()
-//            .toObjects(BhandaraModel::class.java)
         return Firebase.firestore.collection("Bhandara")
             .whereGreaterThanOrEqualTo("timestamp", Timestamp(startDate))
             .whereLessThanOrEqualTo("timestamp", Timestamp(endDate))

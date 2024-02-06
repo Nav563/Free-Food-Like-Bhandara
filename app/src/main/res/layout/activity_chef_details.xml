@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gridview_linear_rectangle"
+    tools:context=".activities.ChefDetailsActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/chef_img"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:src="@drawable/man" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+                android:textSize="18sp"
+                android:drawablePadding="10dp"
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/baseline_person_24" />
+
+            <TextView
+                android:id="@+id/tv_mobile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/mobile_no"
+                android:drawablePadding="10dp"
+                android:textSize="14sp"
+                app:drawableStartCompat="@drawable/baseline_phone_24" />
+
+            <TextView
+                android:id="@+id/tv_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/address"
+                android:drawablePadding="10dp"
+                android:textSize="14sp"
+                app:drawableStartCompat="@drawable/baseline_location_24" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="@string/give_all_details_about_event"
+        android:textColor="@color/dark_grey"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout" />
+
+    <Spinner
+        android:id="@+id/event_type"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/edittext_rectangle"
+        app:layout_constraintTop_toBottomOf="@+id/tv" />
+
+    <TextView
+        android:id="@+id/tv_n"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/no_of_peoples"
+        android:textColor="@color/dark_grey"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/event_type" />
+
+    <EditText
+        android:id="@+id/edt_peoples"
+        style="@style/EditTextNoUnderline"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/edittext_rectangle"
+        android:hint="@string/enter_no_of_peoples"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_n" />
+
+    <TextView
+        android:id="@+id/tv_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/event_address"
+        android:textColor="@color/dark_grey"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/edt_peoples" />
+
+    <EditText
+        android:id="@+id/edt_evnAdd"
+        style="@style/EditTextNoUnderline"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/edittext_rectangle"
+        android:hint="@string/enter_event_address"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_add" />
+
+    <Button
+        android:id="@+id/book_chef"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/orange"
+        android:text="@string/book"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edt_evnAdd" />
+
+    <Button
+        android:id="@+id/call_chef"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/orange"
+        android:text="@string/call_chef"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edt_evnAdd" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
