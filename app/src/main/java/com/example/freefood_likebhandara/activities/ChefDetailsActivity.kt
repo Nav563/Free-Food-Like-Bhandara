@@ -11,9 +11,15 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.freefood_likebhandara.databinding.ActivityChefDetailsBinding
+import com.example.freefood_likebhandara.model.BhandaraModel
 import com.example.freefood_likebhandara.model.Chef
+import com.google.firebase.Timestamp
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import java.util.Date
 
 class ChefDetailsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityChefDetailsBinding
@@ -36,7 +42,7 @@ class ChefDetailsActivity : AppCompatActivity() {
 
     private fun callChef() {
         // Check if the mobile number is not null or empty before initiating the call
-        if (!mobileNumber.isNullOrBlank()) {
+        if (mobileNumber.isNotBlank()) {
             val dialIntent = Intent(Intent.ACTION_CALL, Uri.parse("tel:$mobileNumber"))
             // Check if the CALL_PHONE permission is granted before making the call
             if (checkSelfPermission(android.Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
@@ -76,7 +82,6 @@ class ChefDetailsActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext, "Selected: $selectedOption", Toast.LENGTH_SHORT)
                     .show()
             }
-
             override fun onNothingSelected(parent: AdapterView<*>?) {
             }
         }
@@ -90,6 +95,29 @@ class ChefDetailsActivity : AppCompatActivity() {
         Glide.with(this).load(item.chefImage).into(binding.chefImg)
     }
 
+    private fun storeData() {
+        val currentdate = Date()
+        val a = FirebaseAuth.getInstance().currentUser?.displayName
+        val b = FirebaseAuth.getInstance().currentUser?.uid
+        val timestamp = Timestamp(currentdate)
+        val data = Chef(
+            chefName = binding.tvName.text.toString(),
+            chefMobile = binding.tvMobile.text.toString(),
+            chefAddress = binding.tvAddress.text.toString(),
+            //bhandaraDay = selectedEvent,
+            timestamp = timestamp
+        )
+        Firebase.firestore.collection("Chefs").document()
+            .set(data)
+            .addOnSuccessListener {
+                val intent = Intent(this, ChefDetailsActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                startActivity(intent)
+            }
+            .addOnFailureListener {
+                Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show()
+            }
+    }
     // Handle permission request results
     override fun onRequestPermissionsResult(
         requestCode: Int,
