@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "667967746321",
+    "project_id": "free-food---like-bhandara",
+    "storage_bucket": "free-food---like-bhandara.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:667967746321:android:2cb102696208e45df8dcb0",
+        "android_client_info": {
+          "package_name": "com.example.freefood_likebhandara"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHcAMSw2LREIwK7pKxT_K3mxoU7Dlxs5A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

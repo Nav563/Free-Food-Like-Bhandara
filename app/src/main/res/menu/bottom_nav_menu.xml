@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/quotes"
+        android:title="@string/home"
+        android:icon="@drawable/baseline_home_24"/>
+
+    <item
+        android:id="@+id/products"
+        android:title="@string/bhandara"
+        android:icon="@drawable/baseline_food_24"/>
+
+    <item
+        android:id="@+id/users"
+        android:title="@string/community"
+        android:icon="@drawable/baseline_groups_2_24"/>
+
+</menu>

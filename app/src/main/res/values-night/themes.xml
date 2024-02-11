@@ -1,0 +1,22 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.FreeFoodLikeBhandara" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="buttonStyle">@style/Button.FreeFoodLikeBhandara</item>
+    </style>
+    <!-- Button style for dark theme -->
+    <style name="Button.FreeFoodLikeBhandara" parent="Widget.Material3.Button">
+        <item name="android:background">@drawable/button_rectangle</item>
+        <item name="android:textColor">@color/black</item>
+        <!-- Add more attributes as needed -->
+    </style>
+
+    <!-- Define your custom button background drawable for dark theme -->
+    <drawable name="button_rectangle">#FFF1F5F8</drawable>
+
+    <!-- Define your custom button text color for dark theme -->
+    <color name="black">#000000</color>
+    <!-- Define the default button background drawable -->
+    <drawable name="custom_button_background">#FF4081</drawable>
+</resources>

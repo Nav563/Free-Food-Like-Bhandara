@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/foodFragment"
+    android:background="@drawable/gridview_linear_rectangle"
+    tools:context=".fragment.FoodFragment">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/topAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.AppBarLayout.PrimarySurface"
+        android:fitsSystemWindows="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/light_sky"
+        android:gravity="center_vertical">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar1"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Bhanadara Places"
+            app:navigationIcon="@drawable/baseline_location_24"
+            app:titleTextColor="@color/black"
+            style="@style/Widget.MaterialComponents.Toolbar.PrimarySurface"
+            android:background="@drawable/gridview_linear_rectangle"
+            android:elevation="0dp"/>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            style="@style/MyStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:tabTextColor="@color/light_black"
+            app:tabSelectedTextColor="@color/black"
+            app:tabIndicator="@color/black"
+            app:tabIndicatorHeight="5dp"
+            app:tabGravity="fill"
+            app:tabMode="fixed" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPagerV2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topAppBar"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/bannerAd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        ads:adUnitId="@string/banner_ad_id_test"
+        ads:adSize="SMART_BANNER"
+        android:layout_alignBottom="@id/viewPagerV2"
+        android:layout_marginBottom="66dp"/>
+
+</RelativeLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="black_light">#0d1b2a</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="light_sky">#cbf3f0</color>
+    <color name="pink">#fb6f92</color>
+    <color name="grey">#e5e5e5</color>'
+    <color name="dark_grey">#cccccc</color>
+<!--    <color name="navigation">#e3f2fd</color>-->
+    <color name="orange">#FF7900</color>
+    <color name="light_black">#495057</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="green_teal_600">#00897B</color>
+    <color name="green_teal_700">#00796B</color>
+    <color name="windowBackground">#cbf3f0</color>
+    <color name="textColorPrimary">#cccccc</color>
+    <color name="layout_background">#F1F5F8</color>
+    <color name="grey_light">#edf2f4</color>
+    <color name="blue">#4361ee</color>
+<!--    <color name="bottom_navigation">#e3f2fd</color>-->
+</resources>

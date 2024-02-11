@@ -1,0 +1,22 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.FreeFoodLikeBhandara" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="buttonStyle">@style/Button.FreeFoodLikeBhandara</item>
+    </style>
+
+    <!-- Button style -->
+    <style name="Button.FreeFoodLikeBhandara" parent="Widget.Material3.Button">
+        <item name="android:background">#FF4081</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <!-- Add more attributes as needed -->
+    </style>
+
+    <!-- Define your custom button background drawable -->
+    <drawable name="custom_button_background">#FF4081</drawable>
+
+    <!-- Define your custom button text color -->
+    <color name="custom_button_text_color">#FFFFFF</color>
+
+    <style name="Theme.FreeFoodLikeBhandara" parent="Base.Theme.FreeFoodLikeBhandara" />
+</resources>
